@@ -1,0 +1,279 @@
+$box-shadow: 1px 1px 50px rgba(166, 166, 166, 0.3);
+$box-shadow-hover: 1px 1px 50px rgba(100, 100, 100, 0.4);
+
+@import "responsive";
+// Mixin: Transition
+@mixin transition($seconds) {
+  transition: $seconds;
+  -o-transition: $seconds;
+  -moz-transition: $seconds;
+  -webkit-transition: $seconds;
+}
+@mixin box-shadow($prop) {
+  box-shadow: $prop;
+  -o-box-shadow: $prop;
+  -ms-box-shadow: $prop;
+  -moz-box-shadow: $prop;
+  -webkit-box-shadow: $prop;
+}
+@mixin transform($property) {
+  transform: $property;
+  -o-transform: $property;
+  -ms-transform: $property;
+  -moz-transform: $property;
+  -webkit-transform: $property;
+}
+// Every Element
+* {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  -ms-appearance: none !important;
+  -o-appearance: none !important;
+  appearance: none !important;
+  outline: none !important;
+  @include transition(0.4s);
+  font-family: 'Raleway', sans-serif;
+}
+// Every Link
+a {
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+// Every li tag
+li {
+  list-style-type: none;
+}
+// Every thumbnail
+.thumbnail {
+  border: none !important;
+  padding: none !important;
+  border-radius: 0px !important;
+  text-align: center;
+  width: 65%;
+  border-bottom: 2px solid rgb(41,130,247) !important;
+}
+#nav-icon-container {
+  width: 120px;
+  min-height: 120px;
+  border-radius: 100%;
+  background-color: rgb(41,130,247);
+  position: fixed;
+  top: -55px;
+  right: -55px;
+  z-index: 150;
+}
+#nav-icon {
+  background: none;
+  border: none;
+  color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 7px;
+  z-index: 200;
+  i {
+    font-size: 23px;
+  }
+}
+#nav-narrow {
+  width: 425px;
+  min-height: 100%;
+  padding-top: 100px;
+  background-color: rgb(41,130,247);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+  display: none;
+  @include box-shadow(2px 2px 50px rgba(0,0,0,0.5));
+  .navigation-menu-narrow {
+    display: block;
+    color: #000;
+    margin: 40px auto;
+    width: 85px;
+    height: 35px;
+    border: none;
+    z-index: 110;
+    &:hover {
+      @include transform(translateY(-2px));
+    }
+  }
+  .about-narrow, .download-narrow {
+    width: 80px;
+    color: #fff;
+    background: none !important;
+  }
+  .contact-narrow {
+    border-radius: 20px;
+    color: rgb(41,130,247);
+    background-color: #fff !important;
+  }
+}
+// Navigation and Menus
+#navigation {
+  height: 60px;
+  background-color: rgb(41,130,247);
+  z-index: -1;
+  // Logo of app
+  #logo {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    margin: 10px 15px;
+    display: inline-block;
+  }
+  // Menus
+  .navigation-menu {
+    float: right;
+    color: #000;
+    margin: 10px 15px;
+    width: 85px;
+    height: 35px;
+    border: none;
+    &:hover {
+      @include transform(translateY(-2px));
+    }
+  }
+  // Contact Button
+  #contact {
+    border-radius: 20px;
+    color: rgb(41,130,247);
+    background-color: #fff !important;
+    @include box-shadow($box-shadow);
+    &:hover {
+      @include box-shadow($box-shadow-hover);
+    }
+  }
+  // Other menus
+  #about, #download {
+    width: 80px;
+    color: #fff;
+    background: none !important;
+  }
+}
+// Landing Graphic and Download App Description
+#landing {
+  width: 100%;
+  min-height: 325px;
+  background-color: rgb(41,130,247);
+  color: #fff;
+  position: relative;
+  top: -5px;
+  z-index: -1;
+  #iphone {
+    width: 200px;
+  }
+  .download-app-one {
+    .download-app-content {
+      margin: 15px 0;
+    }
+  }
+}
+// Scroll Down Button
+#scroll-down {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 100%;
+  color: rgb(237,63,90);
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  top: -17px;
+  font-size: 18px;
+  padding-top: 4px;
+  z-index: 2;
+  @include box-shadow($box-shadow);
+  &:hover {
+    @include box-shadow($box-shadow-hover);
+  }
+}
+#about-section {
+  z-index: 2;
+  .vector {
+    font-size: 100px;
+    color: rgb(41,130,247);
+    text-align: center;
+  }
+  .caption h4 {
+    font-weight: bold;
+  }
+}
+// App description
+#description {
+  .description-details {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .description-image {
+    width: 200px;
+    border-bottom: 2px solid rgb(41,130,247);
+  }
+  .description-image-two {
+    width: 200px;
+    border-bottom: none;
+    border-top: 2px solid rgb(41,130,247);
+  }
+  .description-text {
+    padding: 0% 10%;
+  }
+}
+// Download App: Second
+#download-app-two {
+  background-image: url('../media/download-bkg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  padding-top: 55px;
+  background-color: rgb(41,130,247);
+  .download-app-two-content {
+    margin: 25px 0;
+    color: #fff;
+  }
+}
+// horizontal line break
+#hr {
+  width: 50%;
+  min-height: 1px;
+  background-color: rgb(237,63,90);
+  margin-top: 50px;
+}
+// Scroll to top button
+#scroll-top {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 100%;
+  color: rgb(237,63,90);
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  top: -17px;
+  z-index: 2;
+  font-size: 18px;
+  padding-top: 2px;
+  @include box-shadow($box-shadow);
+  &:hover {
+    @include box-shadow($box-shadow-hover);
+  }
+}
+// Footer
+#footer {
+  min-height: 60px;
+  width: 100%;
+  background-color: #000;
+  position: relative;
+  bottom: -25px;
+  // Copyright text
+  .footer-text {
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    margin-left: -150px;
+    left: 50%;
+    color: #fff;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,86 @@
+// For screens smaller than 768px
+@media only screen and (max-width: 768px) {
+  // navigation
+  #navigation {
+    .navigation-menu {
+      display: none;
+    }
+  }
+  #landing {
+    #iphone {
+      border-bottom: 2px solid #fff;
+    }
+    .download-app-one {
+      padding-top: 5px;
+      padding-bottom: 15px;
+    }
+  }
+  #nav-icon-container {
+    display: block
+  }
+  // navigation icon
+  #nav-icon {
+    display: block
+  }
+  #description {
+    .description-text {
+      margin-top: 15px;
+    }
+  }
+
+
+}
+// For Screens Bigger Than 768px Wide
+@media only screen and (min-width: 768px) {
+  // navigation
+  #navigation {
+    .navigation-menu {
+      display: inline-block;
+    }
+  }
+  #landing {
+    padding-top: 40px;
+    .mission-text {
+      position: relative;
+      top: -30px;
+    }
+    #iphone {
+      border-bottom: none;
+      // bottom: 0px;
+    }
+    .download-app-one {
+      padding-top: 0px;
+    }
+  }
+  // navigation icon
+  #nav-icon-container {
+    display: none;
+  }
+  #nav-icon {
+    display: none;
+  }
+  #description {
+    .description-text {
+      margin-top: 75px;
+    }
+  }
+
+}
+// For Screens Bigger Than 1280px Wide
+@media only screen and (min-width: 1280px) {
+  // Navigation
+  #navigation {
+    padding: 0% 15%;
+  }
+  // landing
+  #landing {
+    padding: 40px 15% 0px 15%;
+  }
+  // About Section
+  #about-section {
+    padding: 0% 15%;
+  }
+  #description {
+    padding: 0% 15%;
+  }
+}
